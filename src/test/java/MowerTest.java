@@ -22,6 +22,8 @@ public class MowerTest {
         Assert.assertEquals(Orientation.E,mower.getOrientation());
         mower.turnRight();
         Assert.assertEquals(Orientation.S,mower.getOrientation());
+        mower.turnRight();
+        Assert.assertEquals(Orientation.W,mower.getOrientation());
 
     }
 }
