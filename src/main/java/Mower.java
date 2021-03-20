@@ -28,6 +28,23 @@ public class Mower {
                 this.orientation =  Orientation.N;
                 break;
         }
+    }
+
+    public void turnLeft() {
+        switch (this.orientation) {
+            case N:
+                this.orientation = Orientation.W;
+                break;
+            case W:
+                this.orientation = Orientation.S;
+                break;
+            case S:
+                this.orientation = Orientation.E;
+                break;
+            case E:
+                this.orientation = Orientation.N;
+                break;
+        }
 
     }
 

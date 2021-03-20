@@ -28,4 +28,17 @@ public class MowerTest {
         Assert.assertEquals(Orientation.N,mower.getOrientation());
 
     }
+
+    @Test
+    public void turnLeft_Test() {
+        mower.turnLeft();
+        Assert.assertEquals(Orientation.W,mower.getOrientation());
+        mower.turnLeft();
+        Assert.assertEquals(Orientation.S,mower.getOrientation());
+        mower.turnLeft();
+        Assert.assertEquals(Orientation.E,mower.getOrientation());
+        mower.turnLeft();
+        Assert.assertEquals(Orientation.N,mower.getOrientation());
+
+    }
 }
