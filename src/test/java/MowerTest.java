@@ -32,12 +32,13 @@ public class MowerTest {
     }
 
     @Test
-    public void forward_Test() {
+    public void forward_north_initialized_Test() {
         Mower mower = createMower(Orientation.N);
         mower.forward();
         Assert.assertEquals(1,mower.getYPosition());
 
-        mower.forward();  mower.forward();  mower.forward();mower.forward();  mower.forward();
+        mower = createMower(5,5,Orientation.N);
+        mower.forward();
         Assert.assertEquals(5,mower.getYPosition());
 
     }
@@ -46,6 +47,19 @@ public class MowerTest {
         Mower mower = Mower.builder()
                 .xPosition(0)
                 .yPosition(0)
+                .orientation(orientation)
+                .area(Area.builder()
+                        .height(5)
+                        .width(5)
+                        .build())
+                .build();
+        return mower;
+    }
+
+    private Mower createMower(int xPosition, int yPosition, Orientation orientation){
+        Mower mower = Mower.builder()
+                .xPosition(xPosition)
+                .yPosition(yPosition)
                 .orientation(orientation)
                 .area(Area.builder()
                         .height(5)
