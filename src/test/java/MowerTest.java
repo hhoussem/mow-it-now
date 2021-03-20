@@ -43,6 +43,25 @@ public class MowerTest {
 
     }
 
+
+    @Test
+    public void forward_south_initialized_Test() {
+        //GIVEN
+        Mower mower = createMower(3,2,Orientation.S);
+        //WHEN
+        mower.forward();
+        //THEN
+        Assert.assertEquals(1,mower.getYPosition());
+
+        //GIVEN
+        mower = createMower(Orientation.S);
+        //WHEN
+        mower.forward();
+        //THEN
+        Assert.assertEquals(0,mower.getYPosition());
+
+    }
+
     private Mower createMower(Orientation orientation){
         Mower mower = Mower.builder()
                 .xPosition(0)
