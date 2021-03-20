@@ -13,6 +13,8 @@ public class Mower {
 
     private Orientation orientation;
 
+    private Area area;
+
     public void turnRight() {
         switch (this.orientation) {
             case N:
