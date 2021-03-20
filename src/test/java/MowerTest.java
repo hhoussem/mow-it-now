@@ -62,6 +62,24 @@ public class MowerTest {
 
     }
 
+    @Test
+    public void forward_east_initialized_Test() {
+        //GIVEN
+        Mower mower = createMower(3,2,Orientation.E);
+        //WHEN
+        mower.forward();
+        //THEN
+        Assert.assertEquals(4,mower.getXPosition());
+
+        //GIVEN
+        mower = createMower(Orientation.E);
+        //WHEN
+        mower.forward();
+        //THEN
+        Assert.assertEquals(1,mower.getXPosition());
+
+    }
+
     private Mower createMower(Orientation orientation){
         Mower mower = Mower.builder()
                 .xPosition(0)
