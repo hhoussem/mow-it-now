@@ -13,6 +13,10 @@ public class MowerTest {
                 .xPosition(0)
                 .yPosition(0)
                 .orientation(Orientation.N)
+                .area(Area.builder()
+                        .height(5)
+                        .width(5)
+                        .build())
                 .build();
     }
 
@@ -39,6 +43,14 @@ public class MowerTest {
         Assert.assertEquals(Orientation.E,mower.getOrientation());
         mower.turnLeft();
         Assert.assertEquals(Orientation.N,mower.getOrientation());
+
+    }
+
+    @Test
+    public void forward_Test() {
+        mower.forward();
+        Assert.assertEquals(1,mower.getYPosition());
+
 
     }
 }

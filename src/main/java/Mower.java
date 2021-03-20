@@ -50,4 +50,7 @@ public class Mower {
 
     }
 
+    public void forward() {
+
+    }
 }
