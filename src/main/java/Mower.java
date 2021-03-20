@@ -50,4 +50,18 @@ public class Mower {
 
     }
 
+    public void forward() {
+        if(Orientation.N.equals(orientation) && yPosition < area.getHeight()){
+            yPosition++;
+        }
+        if(Orientation.S.equals(orientation) && yPosition > 0 ){
+            yPosition--;
+        }
+        if(Orientation.E.equals(orientation) && xPosition < area.getWidth()){
+            xPosition++;
+        }
+        if(Orientation.W.equals(orientation) && xPosition > 0 ){
+            xPosition--;
+        }
+    }
 }
