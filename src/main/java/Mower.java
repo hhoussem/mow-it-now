@@ -19,6 +19,7 @@ public class Mower {
                 this.orientation =  Orientation.E;
                 break;
             case E:
+                this.orientation =  Orientation.S;
                 break;
             case S:
                 break;
