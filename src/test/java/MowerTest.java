@@ -20,6 +20,8 @@ public class MowerTest {
     public void turnRight_Test() {
         mower.turnRight();
         Assert.assertEquals(Orientation.E,mower.getOrientation());
+        mower.turnRight();
+        Assert.assertEquals(Orientation.S,mower.getOrientation());
 
     }
 }
