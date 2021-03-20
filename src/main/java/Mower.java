@@ -13,4 +13,8 @@ public class Mower {
 
     private Orientation orientation;
 
+    public void turnRight() {
+
+    }
+
 }
