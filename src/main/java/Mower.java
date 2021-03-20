@@ -14,6 +14,17 @@ public class Mower {
     private Orientation orientation;
 
     public void turnRight() {
+        switch (this.orientation) {
+            case N:
+                this.orientation =  Orientation.E;
+                break;
+            case E:
+                break;
+            case S:
+                break;
+            case W:
+                break;
+        }
 
     }
 

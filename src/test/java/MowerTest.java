@@ -16,7 +16,6 @@ public class MowerTest {
                 .build();
     }
 
-    @Ignore
     @Test
     public void turnRight_Test() {
         mower.turnRight();
