@@ -1,27 +1,11 @@
 import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class MowerTest {
 
-    private Mower mower;
-
-    @Before
-    public void init(){
-        mower = Mower.builder()
-                .xPosition(0)
-                .yPosition(0)
-                .orientation(Orientation.N)
-                .area(Area.builder()
-                        .height(5)
-                        .width(5)
-                        .build())
-                .build();
-    }
-
     @Test
     public void turnRight_Test() {
+        Mower mower = createMower(Orientation.N);
         mower.turnRight();
         Assert.assertEquals(Orientation.E,mower.getOrientation());
         mower.turnRight();
@@ -35,6 +19,7 @@ public class MowerTest {
 
     @Test
     public void turnLeft_Test() {
+        Mower mower = createMower(Orientation.N);
         mower.turnLeft();
         Assert.assertEquals(Orientation.W,mower.getOrientation());
         mower.turnLeft();
@@ -48,11 +33,25 @@ public class MowerTest {
 
     @Test
     public void forward_Test() {
+        Mower mower = createMower(Orientation.N);
         mower.forward();
         Assert.assertEquals(1,mower.getYPosition());
 
         mower.forward();  mower.forward();  mower.forward();mower.forward();  mower.forward();
         Assert.assertEquals(5,mower.getYPosition());
 
+    }
+
+    private Mower createMower(Orientation orientation){
+        Mower mower = Mower.builder()
+                .xPosition(0)
+                .yPosition(0)
+                .orientation(orientation)
+                .area(Area.builder()
+                        .height(5)
+                        .width(5)
+                        .build())
+                .build();
+        return mower;
     }
 }
