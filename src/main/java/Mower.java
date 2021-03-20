@@ -60,5 +60,8 @@ public class Mower {
         if(Orientation.E.equals(orientation) && xPosition < area.getWidth()){
             xPosition++;
         }
+        if(Orientation.W.equals(orientation) && xPosition > 0 ){
+            xPosition--;
+        }
     }
 }
