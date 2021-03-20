@@ -51,6 +51,8 @@ public class MowerTest {
         mower.forward();
         Assert.assertEquals(1,mower.getYPosition());
 
+        mower.forward();  mower.forward();  mower.forward();mower.forward();  mower.forward();
+        Assert.assertEquals(5,mower.getYPosition());
 
     }
 }
