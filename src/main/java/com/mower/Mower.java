@@ -3,6 +3,7 @@ package com.mower;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
@@ -19,6 +20,7 @@ public class Mower {
 
     private Orientation orientation;
 
+    @Setter
     private Area area;
 
     private List<Instruction> instructions;

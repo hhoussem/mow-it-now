@@ -13,10 +13,7 @@ import static java.util.Collections.emptyList;
 
 public class MowerTest {
 
-    private Area area = Area.builder()
-            .height(5)
-            .width(5)
-            .build();
+    private Area area = new Area(5,5);
 
     @Test
     public void turnRight_Test() {
