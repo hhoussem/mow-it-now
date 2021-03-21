@@ -98,8 +98,9 @@ public class MowerTest {
         //GIVEN
         mower = createMower(S);
         //WHEN
-        mower.forward();
+        boolean expectedForward = mower.forward();
         //THEN
+        Assert.assertFalse(expectedForward);
         Assert.assertEquals(0, mower.getYPosition());
 
     }

@@ -15,7 +15,7 @@ public class Area {
 
     private final List<Mower> mowers = new ArrayList<>();
 
-    public int[][] mowersPositions;
+    private int[][] mowersPositions;
 
     public Area(int width, int height) {
         this.width = width;
@@ -35,4 +35,7 @@ public class Area {
         });
     }
 
+    public boolean isEmptyPosition(int xPosition, int yPosition) {
+        return mowersPositions[xPosition][yPosition] == 0;
+    }
 }
