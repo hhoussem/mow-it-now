@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
+import java.util.List;
+
 @Getter
 @Builder
 @AllArgsConstructor
@@ -16,6 +18,24 @@ public class Mower {
     private Orientation orientation;
 
     private Area area;
+
+    private List<Instruction> instructions;
+
+    public void execute() {
+        instructions.forEach(instruction -> {
+            switch (instruction) {
+                case A:
+                    forward();
+                    break;
+                case D:
+                    turnRight();
+                    break;
+                case G:
+                    turnLeft();
+                    break;
+            }
+        });
+    }
 
     public void turnRight() {
         switch (this.orientation) {

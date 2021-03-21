@@ -3,6 +3,12 @@ package com.mower;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Arrays;
+import java.util.List;
+
+import static com.mower.Instruction.*;
+
+
 public class MowerTest {
 
     @Test
@@ -100,6 +106,18 @@ public class MowerTest {
 
     }
 
+    @Test
+    public void execute_Test() {
+        Mower mower = createMower(1,2, Orientation.N, Arrays.asList(G,A,G,A,G,A,G,A,A));
+        mower.execute();
+
+        Assert.assertEquals(1,mower.getXPosition());
+        Assert.assertEquals(3,mower.getYPosition());
+        Assert.assertEquals(Orientation.N,mower.getOrientation());
+
+    }
+
+
     private Mower createMower(Orientation orientation){
         Mower mower = Mower.builder()
                 .xPosition(0)
@@ -122,6 +140,20 @@ public class MowerTest {
                         .height(5)
                         .width(5)
                         .build())
+                .build();
+        return mower;
+    }
+
+    private Mower createMower(int xPosition, int yPosition, Orientation orientation, List<Instruction> instructions) {
+        Mower mower = Mower.builder()
+                .xPosition(xPosition)
+                .yPosition(yPosition)
+                .orientation(orientation)
+                .area(Area.builder()
+                        .height(5)
+                        .width(5)
+                        .build())
+                .instructions(instructions)
                 .build();
         return mower;
     }
