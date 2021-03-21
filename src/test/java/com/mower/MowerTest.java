@@ -109,9 +109,11 @@ public class MowerTest {
 
     @Test
     public void execute_Test() {
+        //GIVEN
         Mower mower = createMower(1,2, N, Arrays.asList(G,A,G,A,G,A,G,A,A));
+        //WEN
         mower.execute();
-
+        //THEN
         Assert.assertEquals(1,mower.getXPosition());
         Assert.assertEquals(3,mower.getYPosition());
         Assert.assertEquals(N,mower.getOrientation());

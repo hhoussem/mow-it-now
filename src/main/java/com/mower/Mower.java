@@ -6,6 +6,8 @@ import lombok.Getter;
 
 import java.util.List;
 
+import static com.mower.Orientation.*;
+
 @Getter
 @Builder
 @AllArgsConstructor
@@ -40,16 +42,16 @@ public class Mower {
     public void turnRight() {
         switch (this.orientation) {
             case N:
-                this.orientation =  Orientation.E;
+                this.orientation = E;
                 break;
             case E:
-                this.orientation =  Orientation.S;
+                this.orientation = S;
                 break;
             case S:
-                this.orientation =  Orientation.W;
+                this.orientation = W;
                 break;
             case W:
-                this.orientation =  Orientation.N;
+                this.orientation = N;
                 break;
         }
     }
@@ -57,32 +59,32 @@ public class Mower {
     public void turnLeft() {
         switch (this.orientation) {
             case N:
-                this.orientation = Orientation.W;
+                this.orientation = W;
                 break;
             case W:
-                this.orientation = Orientation.S;
+                this.orientation = S;
                 break;
             case S:
-                this.orientation = Orientation.E;
+                this.orientation = E;
                 break;
             case E:
-                this.orientation = Orientation.N;
+                this.orientation = N;
                 break;
         }
 
     }
 
     public void forward() {
-        if(Orientation.N.equals(orientation) && yPosition < area.getHeight()){
+        if (N.equals(orientation) && yPosition < area.getHeight()) {
             yPosition++;
         }
-        if(Orientation.S.equals(orientation) && yPosition > 0 ){
+        if (S.equals(orientation) && yPosition > 0) {
             yPosition--;
         }
-        if(Orientation.E.equals(orientation) && xPosition < area.getWidth()){
+        if (E.equals(orientation) && xPosition < area.getWidth()) {
             xPosition++;
         }
-        if(Orientation.W.equals(orientation) && xPosition > 0 ){
+        if (W.equals(orientation) && xPosition > 0) {
             xPosition--;
         }
     }
