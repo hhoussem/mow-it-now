@@ -1,3 +1,5 @@
+package com.mower;
+
 import org.junit.Assert;
 import org.junit.Test;
 
