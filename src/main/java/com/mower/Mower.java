@@ -100,4 +100,11 @@ public class Mower {
         }
         return forward;
     }
+
+    @Override
+    public String toString() {
+        return xPosition + " "
+                + yPosition +" "
+                + orientation;
+    }
 }

@@ -4,6 +4,7 @@ import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Area {
 
@@ -28,11 +29,14 @@ public class Area {
         this.mowers.add(mower);
     }
 
-    public void execute(){
+    public String execute(){
+        List<String> mowersFinishPositions = new ArrayList();
         this.mowers.forEach(mower -> {
             mower.execute();
             mowersPositions[mower.getXPosition()][mower.getYPosition()] = 1;
+            mowersFinishPositions.add(mower.toString());
         });
+        return mowersFinishPositions.stream().collect(Collectors.joining("\n"));
     }
 
     public boolean isEmptyPosition(int xPosition, int yPosition) {

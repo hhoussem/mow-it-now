@@ -20,12 +20,13 @@ public class AreaTest {
         area.addMower(mower1);
 
         //WHEN
-        area.execute();
+        String expectedMowersPositions = area.execute();
 
         //THEN
         assertEquals(1, mower1.getXPosition());
         assertEquals(3, mower1.getYPosition());
         assertEquals(N, mower1.getOrientation());
+        assertEquals("1 3 N", expectedMowersPositions);
 
     }
 
@@ -40,13 +41,14 @@ public class AreaTest {
 
 
         //WHEN
-        area.execute();
+        String expectedMowersPositions = area.execute();
 
         //THEN
         // mower should not move because fixedMower is in the next move position of it
         assertEquals(1, mower.getXPosition());
         assertEquals(2, mower.getYPosition());
         assertEquals(N, mower.getOrientation());
+        assertEquals("1 3 E\n1 2 N", expectedMowersPositions);
 
     }
 
