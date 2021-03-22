@@ -23,7 +23,14 @@ public class Mower {
     @Setter
     private Area area;
 
+    @Setter
     private List<Instruction> instructions;
+
+    public Mower(int xPosition, int yPosition, Orientation orientation) {
+        this.xPosition = xPosition;
+        this.yPosition = yPosition;
+        this.orientation = orientation;
+    }
 
     public void execute() {
         instructions.forEach(instruction -> {
@@ -80,26 +87,19 @@ public class Mower {
         boolean forward = false;
 
         if (N.equals(orientation)
-                && yPosition < area.getHeight()
-                && area.isEmptyPosition(this.xPosition, this.yPosition + 1)) {
+                && area.isEmptyPosition(this.xPosition, this.yPosition +1)) {
             yPosition++;
             forward = true;
-        }
-        else if (S.equals(orientation)
-                && yPosition > 0
-                && area.isEmptyPosition(this.xPosition, this.yPosition - 1)) {
+        } else if (S.equals(orientation)
+                && area.isEmptyPosition(this.xPosition, this.yPosition -1)) {
             yPosition--;
             forward = true;
-        }
-        else if (E.equals(orientation)
-                && xPosition < area.getWidth()
-                && area.isEmptyPosition(this.xPosition + 1, this.yPosition)) {
+        } else if (E.equals(orientation)
+                && area.isEmptyPosition(this.xPosition+1, this.yPosition)) {
             xPosition++;
             forward = true;
-        }
-        else if (W.equals(orientation)
-                && xPosition > 0
-                && area.isEmptyPosition(this.xPosition - 1, this.yPosition)) {
+        } else if (W.equals(orientation)
+                && area.isEmptyPosition(this.xPosition-1, this.yPosition)) {
             xPosition--;
             forward = true;
         }
@@ -110,7 +110,7 @@ public class Mower {
     @Override
     public String toString() {
         return xPosition + " "
-                + yPosition +" "
+                + yPosition + " "
                 + orientation;
     }
 }

@@ -21,7 +21,7 @@ public class Area {
     public Area(int width, int height) {
         this.width = width;
         this.height = height;
-        this.mowersPositions = new int[width][height];
+        this.mowersPositions = new int[width+1][height+1];
     }
 
     public void addMower(Mower mower){
@@ -40,6 +40,10 @@ public class Area {
     }
 
     public boolean isEmptyPosition(int xPosition, int yPosition) {
-        return mowersPositions[xPosition][yPosition] == 0;
+        return xPosition >= 0
+                && xPosition <= width
+                && yPosition >= 0
+                && yPosition <= height
+                && mowersPositions[xPosition][yPosition] == 0;
     }
 }
