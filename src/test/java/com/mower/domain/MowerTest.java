@@ -13,7 +13,7 @@ import static java.util.Collections.emptyList;
 
 public class MowerTest {
 
-    private Area area = new Area(5,5);
+    private final Area area = new Area(5,5);
 
     @Test
     public void turnRight_Test() {
@@ -163,13 +163,12 @@ public class MowerTest {
     }
 
     private Mower createMower(int xPosition, int yPosition, Orientation orientation, List<Instruction> instructions) {
-        Mower mower = Mower.builder()
+        return Mower.builder()
                 .xPosition(xPosition)
                 .yPosition(yPosition)
                 .orientation(orientation)
                 .area(area)
                 .instructions(instructions)
                 .build();
-        return mower;
     }
 }

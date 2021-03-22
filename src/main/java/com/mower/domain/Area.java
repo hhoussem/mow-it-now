@@ -16,7 +16,7 @@ public class Area {
 
     private final List<Mower> mowers = new ArrayList<>();
 
-    private int[][] mowersPositions;
+    private final int[][] mowersPositions;
 
     public Area(int width, int height) {
         this.width = width;
@@ -35,7 +35,7 @@ public class Area {
             mowersFinishPositions.add(mower.execute());
             mowersPositions[mower.getXPosition()][mower.getYPosition()] = 1;
         });
-        return mowersFinishPositions.stream().collect(Collectors.joining("\n"));
+        return String.join("\n", mowersFinishPositions);
     }
 
     public boolean isEmptyPosition(int xPosition, int yPosition) {

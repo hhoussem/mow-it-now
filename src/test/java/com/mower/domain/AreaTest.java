@@ -36,7 +36,7 @@ public class AreaTest {
         Area area = new Area(5, 5);
         Mower fixedMower = createMower(1, 3, E, Collections.emptyList());
         area.addMower(fixedMower);
-        Mower mower = createMower(1, 2, N, asList(A));
+        Mower mower = createMower(1, 2, N, Collections.singletonList(A));
         area.addMower(mower);
 
 
@@ -54,12 +54,11 @@ public class AreaTest {
 
 
     private Mower createMower(int xPosition, int yPosition, Orientation orientation, List<Instruction> instructions) {
-        Mower mower = Mower.builder()
+       return Mower.builder()
                 .xPosition(xPosition)
                 .yPosition(yPosition)
                 .orientation(orientation)
                 .instructions(instructions)
                 .build();
-        return mower;
     }
 }
