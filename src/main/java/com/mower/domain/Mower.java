@@ -32,7 +32,7 @@ public class Mower {
         this.orientation = orientation;
     }
 
-    public void execute() {
+    public String execute() {
         instructions.forEach(instruction -> {
             switch (instruction) {
                 case A:
@@ -46,6 +46,7 @@ public class Mower {
                     break;
             }
         });
+        return this.toString();
     }
 
     public void turnRight() {

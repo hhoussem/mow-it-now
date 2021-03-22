@@ -32,9 +32,8 @@ public class Area {
     public String execute(){
         List<String> mowersFinishPositions = new ArrayList();
         this.mowers.forEach(mower -> {
-            mower.execute();
+            mowersFinishPositions.add(mower.execute());
             mowersPositions[mower.getXPosition()][mower.getYPosition()] = 1;
-            mowersFinishPositions.add(mower.toString());
         });
         return mowersFinishPositions.stream().collect(Collectors.joining("\n"));
     }
