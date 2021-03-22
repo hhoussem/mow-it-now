@@ -1,4 +1,4 @@
-package com.mower;
+package com.mower.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,7 +7,7 @@ import lombok.Setter;
 
 import java.util.List;
 
-import static com.mower.Orientation.*;
+import static com.mower.domain.Orientation.*;
 
 @Getter
 @Builder

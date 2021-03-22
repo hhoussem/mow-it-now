@@ -1,4 +1,4 @@
-package com.mower;
+package com.mower.domain;
 
 public enum Instruction {
     A,D,G

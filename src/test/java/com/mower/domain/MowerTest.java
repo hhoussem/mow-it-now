@@ -1,4 +1,4 @@
-package com.mower;
+package com.mower.domain;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -6,8 +6,8 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.mower.Instruction.*;
-import static com.mower.Orientation.*;
+import static com.mower.domain.Instruction.*;
+import static com.mower.domain.Orientation.*;
 import static java.util.Collections.emptyList;
 
 

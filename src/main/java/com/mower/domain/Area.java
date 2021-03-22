@@ -1,4 +1,4 @@
-package com.mower;
+package com.mower.domain;
 
 import lombok.Getter;
 
