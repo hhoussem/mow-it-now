@@ -78,26 +78,32 @@ public class Mower {
 
     public boolean forward() {
         boolean forward = false;
-        if (N.equals(orientation) && yPosition < area.getHeight()
-                && area.isEmptyPosition(this.xPosition,this.yPosition+1)) {
+
+        if (N.equals(orientation)
+                && yPosition < area.getHeight()
+                && area.isEmptyPosition(this.xPosition, this.yPosition + 1)) {
             yPosition++;
             forward = true;
         }
-        if (S.equals(orientation) && yPosition > 0
-                && area.isEmptyPosition(this.xPosition,this.yPosition-1)) {
+        else if (S.equals(orientation)
+                && yPosition > 0
+                && area.isEmptyPosition(this.xPosition, this.yPosition - 1)) {
             yPosition--;
             forward = true;
         }
-        if (E.equals(orientation) && xPosition < area.getWidth()
-                && area.isEmptyPosition(this.xPosition+1,this.yPosition)) {
+        else if (E.equals(orientation)
+                && xPosition < area.getWidth()
+                && area.isEmptyPosition(this.xPosition + 1, this.yPosition)) {
             xPosition++;
             forward = true;
         }
-        if (W.equals(orientation) && xPosition > 0
-                && area.isEmptyPosition(this.xPosition-1,this.yPosition)) {
+        else if (W.equals(orientation)
+                && xPosition > 0
+                && area.isEmptyPosition(this.xPosition - 1, this.yPosition)) {
             xPosition--;
             forward = true;
         }
+
         return forward;
     }
 
